@@ -3,7 +3,7 @@ import express from 'express'
 import multer from 'multer'
 import escapeHTML from 'escape-html'
 
-const router = express.Router()
+const Router = express.Router()
 
 const storage = multer.diskStorage({
 	destination(req, file, cb) {
@@ -33,7 +33,7 @@ const upload = multer({
 	},
 })
 
-router.post('/', upload.single('image'), (req, res) => {
+Router.post('/', upload.single('image'), (req, res) => {
 	res.send(escapeHTML(`/${req.file.path}`))
 	const http = req.params.path
 	const server = http.createServer
@@ -44,4 +44,4 @@ router.post('/', upload.single('image'), (req, res) => {
 	})
 })
 
-export default router
+export default Router

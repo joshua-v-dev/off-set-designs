@@ -14,7 +14,8 @@
 		"dev": "concurrently \"npm run server\" \"npm run client\"",
 		"data:import": "node backend/seeder",
 		"data:destroy": "node backend/seeder -d",
-		"build": "node server.js"
+		"build": "webpack",
+		"heroku-postbuild": "webpack --config webpack.config.prod.js"
 	},
 	"author": "Joshua Vaughn",
 	"license": "MIT",

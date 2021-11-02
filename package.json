@@ -14,7 +14,7 @@
 		"dev": "concurrently \"npm run server\" \"npm run client\"",
 		"data:import": "node backend/seeder",
 		"data:destroy": "node backend/seeder -d",
-		"build": "cd packages/react-scripts && node bin/react-scripts.js build"
+		"build": "react-scripts && node bin/react-scripts.js build"
 	},
 	"author": "Joshua Vaughn",
 	"license": "MIT",
